@@ -19,10 +19,9 @@ public class GreeterAutoConfiguration {
     @Autowired
     private GreeterProperties greeterProperties;
 
-    @org.springframework.context.annotation.Bean
+    @Bean
     @ConditionalOnMissingBean
-    public GreetingConfig greeterConfig() {
-
+    public GreetingConfig greetingConfig() {
         String userName = greeterProperties.getUserName() == null
                 ? System.getProperty("user.name")
                 : greeterProperties.getUserName();
