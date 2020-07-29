@@ -1,7 +1,7 @@
 plugins {
-	id 'org.springframework.boot' version '2.3.2.RELEASE'
-	id 'io.spring.dependency-management' version '1.0.9.RELEASE'
-	id 'java'
+    id 'org.springframework.boot' version '2.3.2.RELEASE'
+    id 'io.spring.dependency-management' version '1.0.9.RELEASE'
+    id 'java'
 }
 
 group = 'dev.donghyeon'
@@ -10,22 +10,22 @@ sourceCompatibility = '8'
 
 
 repositories {
-	mavenCentral()
-	maven { url 'https://jitpack.io' }
+    mavenCentral()
+    maven { url 'https://jitpack.io' }
 }
 
 dependencies {
-	implementation 'com.github.DaeAkin:greeter-library:v1.0.0'
-//	testImplementation 'com.github.DaeAkin:greeter-library:v1.0.0'
-	implementation 'org.springframework.boot:spring-boot-starter'
-	testImplementation('org.springframework.boot:spring-boot-starter-test') {
-		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
-	}
+    annotationProcessor "org.springframework.boot:spring-boot-autoconfigure-processor"
+    implementation 'com.github.DaeAkin:greeter-library:v1.0.0'
+    implementation 'org.springframework.boot:spring-boot-starter'
+    testImplementation('org.springframework.boot:spring-boot-starter-test') {
+        exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+    }
 }
 
 test {
-	useJUnitPlatform()
+    useJUnitPlatform()
 }
 
-bootJar{enabled=false}
-jar{enabled=true}
+bootJar { enabled = false }
+jar { enabled = true }
